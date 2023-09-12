@@ -1,16 +1,22 @@
 function setup() {
   createCanvas(400, 400);
-  rectMode(CENTER);
-  fill("red");
+  noLoop()
   noStroke()
 }
 
 function draw() {
-  background(125);
+  background("teal");
 
-  fill("red");
-  rect(200, 200, 100, 100);
+  fill("black")
+  push()
+  rect(0, 0, 200, 300)
+  pop()
 
-  fill("green");
-  ellipse(30, 30, 30)
+fill("teal")
+rect(0, 0, 125, 230)
+
+
+
+
+
 }

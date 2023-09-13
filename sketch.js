@@ -1,5 +1,6 @@
-let x = 0;
-let speed = .2;
+let x = 200;
+let speed = 4;
+let diameter = 40;
 
 function setup() {
   createCanvas(400, 400);
@@ -9,9 +10,11 @@ function setup() {
 function draw() {
   background("#85BDBF");
 
-  fill("#C2FCF7")
-  ellipse(x, height/2, 40);
-  // x+= speed;
-  x = x + speed;
-
+  fill("#C2FCF7");
+  ellipse(x, height/2, diameter);
+  //if (x <= width - diameter/2) {
+    if (x >= width - diameter/2 || x<= diameter/2) {
+      speed = speed * -1;
+    }
+    x = x + speed;
 }

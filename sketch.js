@@ -8,13 +8,28 @@ function setup() {
 }
 
 function draw() {
-  background("#85BDBF");
+  background("bgcolor");
 
-  fill("#C2FCF7");
-  ellipse(x, height/2, diameter);
-  //if (x <= width - diameter/2) {
-    if (x >= width - diameter/2 || x<= diameter/2) {
-      speed = speed * -1;
-    }
-    x = x + speed;
+  // push()
+  // translate(40, 40);
+  // rotate(45);
+  // rect(0, 0, 20, 20);
+  // pop()
+
+// let color = map(mouseY, 0, height, 0, 255);
+  
+  // fill(random(255), random(255), random(255));
+  // rect(mouseX, mouseY, 40, 40)
+
+function mouseClicked(){
+if (bgcolor == "orange") {
+  bgcolor = "black";
+  } else{
+  bgcolor = "orange";
+  }
+  console.log("clicked!")
+}
+
+
+
 }

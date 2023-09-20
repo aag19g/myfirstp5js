@@ -3,6 +3,7 @@ let rectX = 0;
 let ballSpeed = 15;
 let moving = true
 let gray = 124
+let transparency = 0
 
 function setup() {
   createCanvas(400, 400);
@@ -10,7 +11,11 @@ function setup() {
 }
 
 function draw() {
-  background("#85BDBF");
+  if (millis() > 10000) {
+    background("blue");
+  } else{
+  background("#85BDBF")
+  }
 
     if (ballX > width || ballX < 0) {
       ballSpeed = ballSpeed * -1;
@@ -21,7 +26,10 @@ function draw() {
     fill(gray);
     ellipse(ballX, height/2, 30)
 
-    fill(255);
+    if (transparency < 255) {
+      transparency++;
+    }
+    fill(25, 42, 100, transparency);
     rectX = rectX + 1;
     rect(ballX, 100, 30, 30);
   }

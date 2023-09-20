@@ -1,45 +1,28 @@
-let x = 200;
-let speed = 4;
-let diameter = 40;
-let stop
-let start
-let shouldmove = true
+let ballX = 0;
+let rectX = 0;
+let ballSpeed = 15;
+let shouldMove = true
 
 function setup() {
   createCanvas(400, 400);
   noStroke()
-  // noLoop()
 }
-
-// function mousePressed(){
-// stop = noLoop()
-// } 
 
 function draw() {
   background("#85BDBF");
 
-  fill("#C2FCF7");
-  ellipse(x, height/2, diameter);
-    if (x >= width - diameter/2 || x<= diameter/2) {
-      speed = speed * -1;
+    if (ballX > width || ballX < 0) {
+      ballSpeed = ballSpeed * -1;
     }
-    if(shouldmove){
-    x = x + speed;
+    if(shouldMove){
+    ballX = ballX + ballSpeed;
     }
-    ellipse(x, height/2, 30)
+    ellipse(ballX, height/2, 30)
+
+    rectX = rectX + 1;
+    rect(ballX, 100, 30, 30);
   }
 
     function mouseClicked(){
-      shouldmove = ! shouldmove;
+      shouldMove = ! shouldMove;
     }
-
-  // fill("#C2FCF7");
-  // rect(x, height/2, diameter);
-  //   if (x >= width - diameter/2 || x<= diameter/2) {
-  //     speed = speed * -2;
-  //   }
-  //   x = x + speed;}
-    
-// function mousePressed(){
-// start = loop()
-// }

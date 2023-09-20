@@ -3,7 +3,7 @@ let speed = 4;
 let diameter = 40;
 let stop
 let start
-let moving = true
+let shouldmove = true
 
 function setup() {
   createCanvas(400, 400);
@@ -23,16 +23,14 @@ function draw() {
     if (x >= width - diameter/2 || x<= diameter/2) {
       speed = speed * -1;
     }
-    x = x + speed;}
+    if(shouldmove){
+    x = x + speed;
+    }
+    ellipse(x, height/2, 30)
+  }
 
     function mouseClicked(){
-      if (moving == true){
-        noLoop();
-        moving = false;
-      }else {
-        loop();
-        moving = true;
-      }
+      shouldmove = ! shouldmove;
     }
 
   // fill("#C2FCF7");

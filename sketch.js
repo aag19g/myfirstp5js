@@ -1,10 +1,16 @@
 let x = 200;
 let speed = 4;
 let diameter = 40;
+let stop
+let start
 
 function setup() {
   createCanvas(400, 400);
   noStroke()
+}
+
+function mousePressed(){
+stop = noLoop()
 }
 
 function draw() {
@@ -17,4 +23,5 @@ function draw() {
       speed = speed * -1;
     }
     x = x + speed;
+
 }
